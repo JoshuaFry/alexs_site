@@ -2,10 +2,8 @@
 
   <v-app light>
 
-    <v-container
-    >
-      <v-row
-        md="12"
+      <v-container
+        class="d-flex"
       >
       <v-col
         md="3"
@@ -14,6 +12,7 @@
         <v-img
           src="logo.png"
           width="600"
+          height="100"
         ></v-img>
       </v-col>
 
@@ -33,7 +32,9 @@
         </v-tabs>
       </v-col>
 
-      <v-col
+      <v-spacer></v-spacer>
+
+        <v-col
         md="3"
         align-self="center"
       >
@@ -55,26 +56,31 @@
           <mdb-icon fab icon="instagram" size="lg" />
         </a>
       </v-col>
-    </v-row>
     </v-container>
-
-
 
     <v-tabs-items  v-model="tab">
       <v-tab-item v-for="item in items" :key="item.tab">
-        <v-card flat>
-          <v-card-text>
+          <v-container fluid>
             <component v-bind:is="item.content"></component>
-          </v-card-text>
-        </v-card>
+          </v-container>
       </v-tab-item>
     </v-tabs-items>
+
+
+
 
 
     <v-footer
       app
     >
       <span>&copy; {{ new Date().getFullYear() }}</span>
+
+      <v-spacer></v-spacer>
+
+        <v-icon
+          @click="darkMode()"
+        >{{this.invertColorIcon}}</v-icon>
+
 
     </v-footer>
 
@@ -83,10 +89,18 @@
 
 <script>
     import { mdbIcon } from 'mdbvue';
+    import home from '../components/home';
+    import shop from '../components/shop';
+    import contact from '../components/contact';
+    import about from '../components/about';
 
     export default {
         components: {
-            mdbIcon
+            mdbIcon,
+            home,
+            shop,
+            contact,
+            about,
         },
         data () {
             return {
@@ -96,7 +110,20 @@
                     { tab: 'Shop', content: 'Shop' },
                     { tab: 'Contact', content: 'portrait' },
                     { tab: 'About', content: 'about' },
-                ]
+                ],
+                isDark: true,
+                invertColorIcon: "mdi-invert-colors",
+            }
+        },
+        methods: {
+            darkMode() {
+                this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
+                this.isDark = !this.isDark;
+                if(this.isDark){
+                    this.invertColorIcon = "mdi-invert-colors"
+                }else{
+                    this.invertColorIcon = "mdi-invert-colors-off"
+                }
             }
         }
     }
