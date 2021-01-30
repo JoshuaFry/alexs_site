@@ -2,45 +2,62 @@
 
   <v-app light>
 
-      <v-tabs
-        v-model="tab"
+    <v-container
+    >
+      <v-row
+        md="12"
       >
+      <v-col
+        md="3"
+        align-self="center"
+      >
+        <v-img
+          src="logo.png"
+          width="600"
+        ></v-img>
+      </v-col>
 
-        <v-container
-          float
-          class="d-flex flex-row"
+      <v-col
+        align-self="center"
+      >
+        <v-tabs
+            v-model="tab"
+            centered
+            background-color="transparent"
         >
-
-          <v-spacer></v-spacer>
-          <v-spacer></v-spacer>
-
           <v-tab
             v-for="item in items" :key="item.tab">
             {{ item.tab }}
           </v-tab>
 
-          <v-spacer></v-spacer>
+        </v-tabs>
+      </v-col>
 
-            <a
-              href="https://facebook.com"
-              class="fb-ic mr-8" role="button">
-              <mdb-icon fab icon="facebook-f" size="lg" />
-            </a>
+      <v-col
+        md="3"
+        align-self="center"
+      >
+        <a
+          href="https://facebook.com"
+          class="fb-ic mr-8" role="button">
+          <mdb-icon fab icon="facebook-f" size="lg" />
+        </a>
 
-            <a
-              href="https://twitter.com"
-              class="tw-ic mr-8" role="button">
-              <mdb-icon fab icon="twitter" size="lg" />
-            </a>
+        <a
+          href="https://twitter.com"
+          class="tw-ic mr-8" role="button">
+          <mdb-icon fab icon="twitter" size="lg" />
+        </a>
 
-            <a
-              href="https://instagram.com"
-              class="ins-ic mr-8" role="button">
-              <mdb-icon fab icon="instagram" size="lg" />
-            </a>
+        <a
+          href="https://instagram.com"
+          class="ins-ic mr-8" role="button">
+          <mdb-icon fab icon="instagram" size="lg" />
+        </a>
+      </v-col>
+    </v-row>
+    </v-container>
 
-          </v-container>
-      </v-tabs>
 
 
     <v-tabs-items  v-model="tab">
@@ -52,7 +69,6 @@
         </v-card>
       </v-tab-item>
     </v-tabs-items>
-
 
 
     <v-footer
