@@ -37,7 +37,6 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
-    ['@nuxtjs/vuetify', { iconfont: 'mdi' }]
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
