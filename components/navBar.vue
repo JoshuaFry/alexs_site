@@ -2,24 +2,31 @@
 
   <v-app light>
 
-    <v-tabs
-      v-model="tab"
-      centered
-      background-color="transparent"
-    >
-      <v-tab
-        v-for="item in items" :key="item.tab">
-        {{ item.tab }}
-      </v-tab>
-    </v-tabs>
+    <v-card>
+      <v-card-title class="text-center justify-center py-2">
+        <h1 class="font-weight-bold display-3 basil--text">
+          Big Al
+        </h1>
+      </v-card-title>
+
+      <v-tabs
+        v-model="tab"
+        centered
+        background-color="transparent"
+      >
+        <v-tab
+          v-for="item in items" :key="item.tab">
+          {{ item.tab }}
+        </v-tab>
+      </v-tabs>
+    </v-card>
+
 
     <v-tabs-items v-model="tab">
-      <v-tab-item v-for="item in items" :key="item.tab">
-        <v-container fluid>
-          <component v-bind:is="item.content"></component>
-        </v-container>
-      </v-tab-item>
-    </v-tabs-items>
+        <v-tab-item v-for="item in items" :key="item.tab">
+            <component v-bind:is="item.content"></component>
+        </v-tab-item>
+      </v-tabs-items>
 
 
   </v-app>
@@ -44,7 +51,7 @@
                 tab: null,
                 items: [
                     {tab: 'Home', content: 'home'},
-                    {tab: 'Shop', content: 'Shop'},
+                    {tab: 'Shop', content: 'shop'},
                     {tab: 'Contact', content: 'portrait'},
                     {tab: 'About', content: 'about'},
                 ],

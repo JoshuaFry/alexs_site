@@ -44,7 +44,7 @@
     import {mdbIcon} from 'mdbvue';
 
     export default {
-        name: 'Footer',
+        name: 'customFooter',
         components: {
             mdbIcon,
         },
