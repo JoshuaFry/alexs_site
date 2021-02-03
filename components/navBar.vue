@@ -24,10 +24,11 @@
 
     <v-tabs-items v-model="tab">
         <v-tab-item v-for="item in items" :key="item.tab">
+          <v-content fluid>
             <component v-bind:is="item.content"></component>
+          </v-content>
         </v-tab-item>
       </v-tabs-items>
-
 
   </v-app>
 </template>

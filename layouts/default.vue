@@ -8,7 +8,7 @@
       <Nuxt></Nuxt>
     </navBar>
 
-    <customFooter></customFooter>
+    <custom-footer></custom-footer>
 
   </v-app>
 
