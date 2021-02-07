@@ -7,6 +7,7 @@
       width="1200"
     >
       <v-row dense>
+<!--        TODO create different sections based off categories-->
         <v-col
           v-for="card in cards"
           :key="card.title"
@@ -32,6 +33,7 @@
             paddleCard,
         },
         data: () => ({
+            // TODO categorize paddles i.e. sports, ....
             cards: [
                 {title: '', src: 'paddles/double.jpg', flex: 6, desc: ""},
                 {title: 'Good Vibes', src: 'paddles/good_vibes.jpg', flex: 6, desc: ""},
