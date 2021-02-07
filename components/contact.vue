@@ -18,15 +18,15 @@
           @input="$v.name.$touch()"
           @blur="$v.name.$touch()"
         ></v-text-field>
-        <v-text-field
-          v-model="subject"
-          :error-messages="subjectErrors"
-          :counter="30"
+        <v-select
+          v-model="select"
+          :items="items"
+          :error-messages="selectErrors"
           label="Subject"
           required
-          @input="$v.name.$touch()"
-          @blur="$v.name.$touch()"
-        ></v-text-field>
+          @change="$v.select.$touch()"
+          @blur="$v.select.$touch()"
+        ></v-select>
         <v-text-field
           v-model="email"
           :error-messages="emailErrors"
@@ -63,7 +63,7 @@
 
         validations: {
             name: {required, maxLength: maxLength(10)},
-            subject: {required, maxLength: maxLength(30)},
+            select: { required },
             email: {required, email},
             content: {required, maxLength: maxLength(500)},
         },
@@ -74,6 +74,11 @@
             email: '',
             subject: '',
             content: '',
+            select: null,
+            items: [
+                'General Inquiry',
+                'Paddle Order',
+            ],
         }),
 
         computed: {
@@ -91,10 +96,10 @@
                 !this.$v.email.required && errors.push('E-mail is required')
                 return errors
             },
-            subjectErrors() {
+            selectErrors () {
                 const errors = []
-                if (!this.$v.name.$dirty) return errors
-                !this.$v.subject.maxLength && errors.push('Subject must be at most 30 characters long')
+                if (!this.$v.select.$dirty) return errors
+                !this.$v.select.required && errors.push('Item is required')
                 return errors
             },
             contentErrors() {

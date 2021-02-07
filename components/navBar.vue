@@ -35,7 +35,7 @@
 
 <script>
     import home from '../components/home';
-    import shop from '../components/shop';
+    import paddles from './paddles';
     import contact from '../components/contact';
     import about from '../components/about';
 
@@ -43,7 +43,7 @@
         name: 'navBar',
         components: {
             home,
-            shop,
+            paddles,
             contact,
             about,
         },
@@ -52,7 +52,7 @@
                 tab: null,
                 items: [
                     {tab: 'Home', content: 'home'},
-                    {tab: 'Shop', content: 'shop'},
+                    {tab: 'Paddles', content: 'paddles'},
                     {tab: 'Contact', content: 'contact'},
                     {tab: 'About', content: 'about'},
                 ],

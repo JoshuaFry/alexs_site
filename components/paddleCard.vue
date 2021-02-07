@@ -29,7 +29,7 @@
         props: [
             'src',
             'desc',
-            'title'
+            'title',
         ]
     }
 </script>
