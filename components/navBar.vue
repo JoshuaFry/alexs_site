@@ -24,7 +24,7 @@
 
     <v-tabs-items v-model="tab">
         <v-tab-item v-for="item in items" :key="item.tab">
-          <v-content fluid>
+          <v-content fluid style="background-color: black">
             <component v-bind:is="item.content"></component>
           </v-content>
         </v-tab-item>
@@ -53,7 +53,7 @@
                 items: [
                     {tab: 'Home', content: 'home'},
                     {tab: 'Shop', content: 'shop'},
-                    {tab: 'Contact', content: 'portrait'},
+                    {tab: 'Contact', content: 'contact'},
                     {tab: 'About', content: 'about'},
                 ],
             }

@@ -10,7 +10,7 @@
     <div class="d-flex flex-row">
       <div class="p-2">
         <a
-          href="https://facebook.com"
+          href="https://www.facebook.com/AlextManard"
           class="fb-ic mr-8" role="button">
           <mdb-icon fab icon="facebook-f" size="lg"/>
         </a>

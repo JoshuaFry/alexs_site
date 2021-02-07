@@ -8,7 +8,7 @@
     <v-card>
 
       <v-img
-        width="400"
+        width="500"
         src="big_al.jpg"
         contain
       ></v-img>
