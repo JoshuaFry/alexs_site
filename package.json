@@ -12,7 +12,8 @@
     "@mdi/font": "^5.9.55",
     "core-js": "^3.8.3",
     "mdbvue": "^6.7.2",
-    "nuxt": "^2.14.12"
+    "nuxt": "^2.14.12",
+    "vuelidate": "latest"
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.11.3"
