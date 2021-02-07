@@ -1,32 +1,22 @@
 <template>
-  <v-col
-    cols="12"
-    class="flex-center"
-  >
-    <v-card
-      width="600"
-      class=""
-    >
-      <form name="contact" method="POST" data-netlify="true" netlify>
-        <p>
-          <label>Your Name: <input type="text" name="name" /></label>
-        </p>
-        <p>
-          <label>Your Email: <input type="email" name="email" /></label>
-        </p>
-        <p>
-          <label>Subject: <select name="subject[]" multiple>
-            <option value="order paddle">Order Paddle</option>
-            <option value="inquiry">General Inquiry</option>
-          </select></label>
-        </p>
-        <p>
-          <label>Message: <textarea name="message"></textarea></label>
-        </p>
-        <p>
-          <button type="submit">Send</button>
-        </p>
-      </form>
-    </v-card>
-  </v-col>
+  <form name="contact" method="POST" data-netlify="true">
+    <p>
+      <label>Your Name: <input type="text" name="name"/></label>
+    </p>
+    <p>
+      <label>Your Email: <input type="email" name="email"/></label>
+    </p>
+    <p>
+      <label>Subject: <select name="subject[]" multiple>
+        <option value="order paddle">Order Paddle</option>
+        <option value="inquiry">General Inquiry</option>
+      </select></label>
+    </p>
+    <p>
+      <label>Message: <textarea name="message"></textarea></label>
+    </p>
+    <p>
+      <button type="submit">Send</button>
+    </p>
+  </form>
 </template>
