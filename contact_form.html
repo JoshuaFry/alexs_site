@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<form name="contact" method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      hidden
+>
+  <input type="hidden" name="form-name" value="contact"/>
+  <p>
+    <label>Your Name: <input type="text" name="name"/></label>
+  </p>
+  <p>
+    <label>Your Email: <input type="email" name="email"/></label>
+  </p>
+  <p>
+    <label>Subject: <select name="subject[]" multiple>
+      <option value="order paddle">Order Paddle</option>
+      <option value="inquiry">General Inquiry</option>
+    </select></label>
+  </p>
+  <p>
+    <label>Message: <textarea name="message"></textarea></label>
+  </p>
+  <p>
+    <button type="submit">Send</button>
+  </p>
+</form>
+</html>

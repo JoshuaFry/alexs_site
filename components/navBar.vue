@@ -24,7 +24,7 @@
 
     <v-tabs-items v-model="tab">
         <v-tab-item v-for="item in items" :key="item.tab">
-          <v-content fluid style="background-color: black">
+          <v-content fluid >
             <component v-bind:is="item.content"></component>
           </v-content>
         </v-tab-item>
