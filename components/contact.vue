@@ -1,4 +1,5 @@
 <template>
+  <v-card>
   <form
     name="contact"
     action="/"
@@ -6,6 +7,7 @@
     netlify
     data-netlify-honeypot="bot-field"
   >
+    <input type="hidden" name="form-name" value="contact"/>
     <ul class="form-style-1">
       <li>
         <label>Your Name <span class="required">*</span>
@@ -29,11 +31,18 @@
           <textarea name="message" id="message" class="field-long field-textarea" required></textarea>
         </label>
       </li>
+      <v-col
+        cols="12"
+        class="flex-center"
+      >
       <li>
         <button type="submit" value="Send message">Send</button>
       </li>
+      </v-col>
+
     </ul>
   </form>
+  </v-card>
 </template>
 
 <style type="text/css">
