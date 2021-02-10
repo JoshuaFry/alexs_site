@@ -11,7 +11,6 @@
         netlify
         method="post"
         action="/"
-        @submit.prevent="submit"
       >
         <v-text-field
           v-model="name"
@@ -52,13 +51,7 @@
           @blur="$v.content.$touch()"
           name="message"
         ></v-textarea>
-        <v-btn
-          type="submit"
-          value="Send message"
-          class="flex-center"
-        >
-          submit
-        </v-btn>
+        <button type="submit" value="Send message">Send</button>
       </form>
     </v-card>
   </v-col>
@@ -79,7 +72,7 @@
         data: () => ({
             name: '',
             email: '',
-            subject: '',
+            subject: 'General Inquiry',
             content: '',
             items: [
                 'General Inquiry',
