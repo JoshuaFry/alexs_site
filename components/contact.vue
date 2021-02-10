@@ -9,27 +9,28 @@
       <form
         name="contact"
         netlify
+        method="post"
         action="/"
+        @submit.prevent="submit"
       >
-
         <v-text-field
           v-model="name"
           :error-messages="nameErrors"
-          :counter="10"
+          :counter="30"
           label="Name"
-          required
           name="name"
-          @input="$v.name.$touch()"
+          required
+          @change="$v.name.$touch()"
           @blur="$v.name.$touch()"
         ></v-text-field>
         <v-select
-          v-model="select"
+          v-model="subject"
           :items="items"
-          :error-messages="selectErrors"
+          :error-messages="subjectErrors"
           label="Subject"
           required
-          @change="$v.select.$touch()"
-          @blur="$v.select.$touch()"
+          @change="$v.subject.$touch()"
+          @blur="$v.subject.$touch()"
           name="subject"
         ></v-select>
         <v-text-field
@@ -37,21 +38,23 @@
           :error-messages="emailErrors"
           label="E-mail"
           required
-          name="email"
-          @input="$v.email.$touch()"
+          @change="$v.email.$touch()"
           @blur="$v.email.$touch()"
+          name="email"
         ></v-text-field>
         <v-textarea
           v-model="content"
+          :counter="500"
           :error-messages="contentErrors"
           label="Message"
           required
+          @input="$v.content.$touch()"
+          @blur="$v.content.$touch()"
           name="message"
-          @input="$v.name.$touch()"
-          @blur="$v.name.$touch()"
         ></v-textarea>
         <v-btn
-          @click="submit"
+          type="submit"
+          value="Send message"
           class="flex-center"
         >
           submit
@@ -67,8 +70,8 @@
     export default {
         mixins: [validationMixin],
         validations: {
-            name: {required, maxLength: maxLength(10)},
-            select: { required },
+            name: {required, maxLength: maxLength(30)},
+            subject: { required },
             email: {required, email},
             content: {required, maxLength: maxLength(500)},
         },
@@ -78,7 +81,6 @@
             email: '',
             subject: '',
             content: '',
-            select: null,
             items: [
                 'General Inquiry',
                 'Paddle Order',
@@ -99,16 +101,17 @@
                 !this.$v.email.required && errors.push('E-mail is required')
                 return errors
             },
-            selectErrors () {
+            subjectErrors () {
                 const errors = []
-                if (!this.$v.select.$dirty) return errors
-                !this.$v.select.required && errors.push('Item is required')
+                if (!this.$v.subject.$dirty) return errors
+                !this.$v.subject.required && errors.push('Item is required')
                 return errors
             },
             contentErrors() {
                 const errors = []
-                if (!this.$v.name.$dirty) return errors
-                !this.$v.subject.maxLength && errors.push('Content must be at most 500 characters long')
+                if (!this.$v.content.$dirty) return errors
+                !this.$v.content.maxLength && errors.push('Content must be at most 500 characters long')
+                !this.$v.content.required && errors.push('Item is required')
                 return errors
             },
         },
