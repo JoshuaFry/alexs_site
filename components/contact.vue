@@ -4,6 +4,7 @@
     method="post"
     netlify
     data-netlify-honeypot="bot-field"
+    action="/"
   >
     <p>
       <label>Your Name: <input type="text" name="name" /></label>
