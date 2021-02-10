@@ -7,8 +7,11 @@
       width="600"
     >
       <form
-
+        name="contact"
+        netlify
+        action="/"
       >
+
         <v-text-field
           v-model="name"
           :error-messages="nameErrors"
