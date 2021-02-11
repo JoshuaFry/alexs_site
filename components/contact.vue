@@ -1,5 +1,4 @@
 <template>
-  <v-card>
   <form
     name="contact"
     action="/"
@@ -31,18 +30,13 @@
           <textarea name="message" id="message" class="field-long field-textarea" required></textarea>
         </label>
       </li>
-      <v-col
-        cols="12"
-        class="flex-center"
-      >
+
       <li>
         <button type="submit" value="Send message">Send</button>
       </li>
-      </v-col>
 
     </ul>
   </form>
-  </v-card>
 </template>
 
 <style type="text/css">
