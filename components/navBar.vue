@@ -3,11 +3,8 @@
   <v-app light>
 
     <v-card>
-      <v-card-title class="text-center justify-center py-2">
-        <h1 class="font-weight-bold display-3 basil--text">
-          Big Al
-        </h1>
-      </v-card-title>
+
+      <v-img src="logo.png"  height="150" contain style="margin-top: 10px"></v-img>
 
       <v-tabs
         v-model="tab"

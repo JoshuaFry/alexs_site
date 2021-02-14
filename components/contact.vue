@@ -6,7 +6,7 @@
     netlify
     data-netlify-honeypot="bot-field"
   >
-    <input type="hidden" name="form-name" value="contact"/>
+    <input type="hidden" name="form-name" value="contact" height="0px"/>
     <ul class="form-style-1">
       <li>
         <label>Your Name <span class="required">*</span>
@@ -43,7 +43,7 @@
   .form-style-1 {
     margin:10px auto;
     max-width: 400px;
-    padding: 20px 12px 10px 20px;
+    padding: 0px 12px 10px 20px;
     font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   }
   .form-style-1 li {
